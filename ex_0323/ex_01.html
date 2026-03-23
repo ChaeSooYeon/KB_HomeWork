@@ -1,0 +1,33 @@
+<div id="app">
+  <button
+    :style="style1"
+    @mouseover.stop="onMouseOver"
+    @mouseout.stop="outMouseOver"
+  >
+    테스트
+  </button>
+</div>
+<script src="https://unpkg.com/vue"></script>
+<script>
+  let vm = Vue.createApp({
+    name: 'App',
+    data() {
+      return {
+        style1: {
+          backgroundColor: 'aqua',
+          color: 'black',
+        },
+      };
+    },
+    methods: {
+      onMouseOver() {
+        this.style1.backgroundColor = 'purple';
+        this.style1.color = 'yellow';
+      },
+      outMouseOver() {
+        this.style1.backgroundColor = 'aqua';
+        this.style1.color = 'black';
+      },
+    },
+  }).mount('#app');
+</script>
